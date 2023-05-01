@@ -13,51 +13,50 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatEditText;
 import androidx.core.content.res.ResourcesCompat;
 
+import java.util.Locale;
+
 public class EditTextWithClear extends AppCompatEditText {
 
-
     Drawable mClearButtonImage;
+    Locale currentLocale = Locale.getDefault();
+    String languageCode = currentLocale.getLanguage();
+    String[] rtlLanguages = {"ar", "he", "fa", "ur", "sd", "ps", "yi", "syr", "dv"};
 
-    private void init() {
+    private void init(){
+
         mClearButtonImage = ResourcesCompat.getDrawable
-                (getResources(), R.drawable.ic_clear_opaque_24dp, null);
-        addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                showClearButton();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
+                (getResources(), R.drawable.ic_clear_black_24dp, null);
 
         setOnTouchListener(new OnTouchListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
-
-                if (getCompoundDrawablesRelative()[2] != null){
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if (getCompoundDrawablesRelative()[2] != null ){
                     float clearButtonStartPosition =
-                            (getWidth() - getPaddingEnd() - mClearButtonImage.getIntrinsicWidth());
+                            (getWidth() - getPaddingEnd() -
+                                    mClearButtonImage.getIntrinsicWidth());
+                    float clearButtonEndPosition =
+                            (getPaddingLeft() + mClearButtonImage.getIntrinsicWidth());
                     boolean isButtonClicked = false;
 
-                    if (event.getX() > clearButtonStartPosition){
-                        isButtonClicked = true;
+                    for (String rtlLanguage : rtlLanguages) {
+                        if (languageCode.equals(rtlLanguage)) {
+                            if(motionEvent.getX() < clearButtonEndPosition){
+                                isButtonClicked = true;
+                            }
+                            break;
+                        }else{
+                            if(motionEvent.getX() > clearButtonStartPosition){
+                                isButtonClicked = true;
+                            }
+                        }
                     }
 
                     if (isButtonClicked){
-                        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                        if (motionEvent.getAction() == MotionEvent.ACTION_DOWN){
                             mClearButtonImage = ResourcesCompat.getDrawable
                                     (getResources(), R.drawable.ic_clear_black_24dp, null);
-                            showClearButton();
                         }
-                        if (event.getAction() == MotionEvent.ACTION_UP){
+                        if (motionEvent.getAction() == MotionEvent.ACTION_UP){
                             mClearButtonImage = ResourcesCompat.getDrawable
                                     (getResources(), R.drawable.ic_clear_opaque_24dp, null);
                             getText().clear();
@@ -65,14 +64,29 @@ public class EditTextWithClear extends AppCompatEditText {
                             return true;
                         }
                     }
-                    else {
-                        return false;
-                    }
                 }
                 return false;
             }
         });
+
+        addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                showClearButton();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
     }
+
     public EditTextWithClear(@NonNull Context context) {
         super(context);
         init();
@@ -94,6 +108,9 @@ public class EditTextWithClear extends AppCompatEditText {
     }
 
     private void hideClearButton(){
-        setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, null, null);
+        setCompoundDrawablesRelativeWithIntrinsicBounds
+                (null, null, null, null);
     }
+
+
 }
