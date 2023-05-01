@@ -19,8 +19,8 @@ public class EditTextWithClear extends AppCompatEditText {
 
     Drawable mClearButtonImage;
     Locale currentLocale = Locale.getDefault();
-    String languageCode = currentLocale.getLanguage();
-    String[] rtlLanguages = {"ar", "he", "fa", "ur", "sd", "ps", "yi", "syr", "dv"};
+    String currentLanguageCode = currentLocale.getLanguage();
+    String[] rtlLanguangesCode = {"ar", "he", "fa", "ur", "sd", "ps", "yi", "syr", "dv"};
 
     private void init(){
 
@@ -38,8 +38,8 @@ public class EditTextWithClear extends AppCompatEditText {
                             (getPaddingLeft() + mClearButtonImage.getIntrinsicWidth());
                     boolean isButtonClicked = false;
 
-                    for (String rtlLanguage : rtlLanguages) {
-                        if (languageCode.equals(rtlLanguage)) {
+                    for (String rtlLanguage : rtlLanguangesCode) {
+                        if (currentLanguageCode.equals(rtlLanguage)) {
                             if(motionEvent.getX() < clearButtonEndPosition){
                                 isButtonClicked = true;
                             }
