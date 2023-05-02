@@ -103,22 +103,22 @@ ADDED from D:\CustomView\app\src\main\AndroidManifest.xml:14:9-22:20
 		ADDED from D:\CustomView\app\src\main\AndroidManifest.xml:16:13-36
 	android:name
 		ADDED from D:\CustomView\app\src\main\AndroidManifest.xml:15:13-42
-intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\CustomView\app\src\main\AndroidManifest.xml:17:21-21:37
-action#android.intent.action.MAIN
-ADDED from D:\CustomView\app\src\main\AndroidManifest.xml:18:25-77
-	android:name
-		ADDED from D:\CustomView\app\src\main\AndroidManifest.xml:18:33-74
-category#android.intent.category.LAUNCHER
-ADDED from D:\CustomView\app\src\main\AndroidManifest.xml:20:25-85
-	android:name
-		ADDED from D:\CustomView\app\src\main\AndroidManifest.xml:20:35-82
 activity#com.example.customview.MainActivity
 ADDED from D:\CustomView\app\src\main\AndroidManifest.xml:24:9-32:20
 	android:exported
 		ADDED from D:\CustomView\app\src\main\AndroidManifest.xml:26:13-36
 	android:name
 		ADDED from D:\CustomView\app\src\main\AndroidManifest.xml:25:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from D:\CustomView\app\src\main\AndroidManifest.xml:27:13-31:29
+action#android.intent.action.MAIN
+ADDED from D:\CustomView\app\src\main\AndroidManifest.xml:28:17-69
+	android:name
+		ADDED from D:\CustomView\app\src\main\AndroidManifest.xml:28:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\CustomView\app\src\main\AndroidManifest.xml:30:17-77
+	android:name
+		ADDED from D:\CustomView\app\src\main\AndroidManifest.xml:30:27-74
 uses-sdk
 INJECTED from D:\CustomView\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\CustomView\app\src\main\AndroidManifest.xml

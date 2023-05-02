@@ -48,30 +48,30 @@
 30-->D:\CustomView\app\src\main\AndroidManifest.xml:15:13-42
 31            android:exported="true" >
 31-->D:\CustomView\app\src\main\AndroidManifest.xml:16:13-36
-32            <intent-filter>
-32-->D:\CustomView\app\src\main\AndroidManifest.xml:17:21-21:37
-33                <action android:name="android.intent.action.MAIN" />
-33-->D:\CustomView\app\src\main\AndroidManifest.xml:18:25-77
-33-->D:\CustomView\app\src\main\AndroidManifest.xml:18:33-74
-34
-35                <category android:name="android.intent.category.LAUNCHER" />
-35-->D:\CustomView\app\src\main\AndroidManifest.xml:20:25-85
-35-->D:\CustomView\app\src\main\AndroidManifest.xml:20:35-82
-36            </intent-filter>
-37        </activity>
-38        <activity
-38-->D:\CustomView\app\src\main\AndroidManifest.xml:24:9-32:20
-39            android:name="com.example.customview.MainActivity"
-39-->D:\CustomView\app\src\main\AndroidManifest.xml:25:13-41
-40            android:exported="true" >
-40-->D:\CustomView\app\src\main\AndroidManifest.xml:26:13-36
-41
-42            <!-- <intent-filter> -->
-43            <!-- <action android:name="android.intent.action.MAIN" /> -->
-44
+32
+33            <!-- <intent-filter> -->
+34            <!-- <action android:name="android.intent.action.MAIN" /> -->
+35
+36
+37            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+38            <!-- </intent-filter> -->
+39        </activity>
+40        <activity
+40-->D:\CustomView\app\src\main\AndroidManifest.xml:24:9-32:20
+41            android:name="com.example.customview.MainActivity"
+41-->D:\CustomView\app\src\main\AndroidManifest.xml:25:13-41
+42            android:exported="true" >
+42-->D:\CustomView\app\src\main\AndroidManifest.xml:26:13-36
+43            <intent-filter>
+43-->D:\CustomView\app\src\main\AndroidManifest.xml:27:13-31:29
+44                <action android:name="android.intent.action.MAIN" />
+44-->D:\CustomView\app\src\main\AndroidManifest.xml:28:17-69
+44-->D:\CustomView\app\src\main\AndroidManifest.xml:28:25-66
 45
-46            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-47            <!-- </intent-filter> -->
+46                <category android:name="android.intent.category.LAUNCHER" />
+46-->D:\CustomView\app\src\main\AndroidManifest.xml:30:17-77
+46-->D:\CustomView\app\src\main\AndroidManifest.xml:30:27-74
+47            </intent-filter>
 48        </activity>
 49
 50        <provider
